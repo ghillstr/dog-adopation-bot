@@ -1,10 +1,10 @@
-const dotenv = require('dotenv')
-const Twitter = require('twitter')
-const fetch = require('node-fetch')
+const dotenv = require("dotenv")
+const twitter = require("twitter")
+const fetch = require("node-fetch")
 
 dotenv.config({ path: './config.env'});
 
-const twitterClient = new Twitter({
+const twitterClient = new twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
     access_token_key: process.env.TWITTER_ACCESS_KEY,
@@ -36,18 +36,19 @@ const newDogsThisHour = async () => {
         })
         const {animals} = await dogRes.json();
 
+
+        
+
         if(animals.length === 0){
             return null
         }
         if(animals.length > 0){
             // Filter dogs with photos
-            dogsWithPhotos= animals.filter(animal => animal.photo.length > 0)
+            dogsWithPhotos= animals.filter(animal => animal.photos.length > 0)
 
             return dogsWithPhotos
 
-        }
-
-       
+        }  
 
      } catch (error){
          console.log(error)
