@@ -17,6 +17,7 @@
   "dependencies": {
     "dotenv": "^9.0.2",
     "node-fetch": "^2.6.1",
+    "twit": "^2.2.11",
     "twitter": "^1.7.1"
   }
 }

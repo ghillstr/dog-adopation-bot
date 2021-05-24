@@ -12,7 +12,7 @@ const twitterClient = new twitter({
 });
 
 const newDogsThisHour = async () => {
-    const hourAgo = new Date(new Date().getTime()- 1000 * 60 * 60 ).toISOString();
+    const hourAgo = new Date(new Date().getTime()- 1000 * 60 * 60).toISOString();
 
     let dogsWithPhotos = []
 
